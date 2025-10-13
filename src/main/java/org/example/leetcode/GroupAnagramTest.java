@@ -32,7 +32,7 @@ public class GroupAnagramTest {
                 map.put(key, list);
             }
             // map.computeIfAbsent(key, k -> new ArrayList<>()).add(str);
-            map.computeIfAbsent(key, k ->new ArrayList<>()).add(str);
+            //map.computeIfAbsent(key, k ->new ArrayList<>()).add(str);
         }
         return new ArrayList<>(map.values());
 
