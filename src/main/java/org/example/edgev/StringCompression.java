@@ -13,7 +13,11 @@ public class StringCompression {
             map.put(ch, map.getOrDefault(ch, 0) + 1);
         }
         StringBuilder sb = new StringBuilder();
-        map.forEach((c,v)->{sb.append(c);sb.append(v);});
+       // map.forEach((c,v)->{sb.append(c);sb.append(v);});
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            sb.append(entry.getKey());
+            sb.append(entry.getValue());
+        }
         System.out.println(sb.toString());
     }
 

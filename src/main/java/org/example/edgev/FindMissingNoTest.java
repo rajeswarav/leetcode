@@ -13,8 +13,8 @@ public class FindMissingNoTest {
                 min=array[i];
             }
         }
-        System.out.println(max);
-        System.out.println(min);
+        System.out.println("max:"+max);
+        System.out.println("min:"+min);
 
         int expectedSum = (max*(max+1))/2;
         System.out.println(expectedSum);
@@ -24,7 +24,7 @@ public class FindMissingNoTest {
         }
         System.out.println(actualSum);
         int missingNum =  expectedSum-actualSum;
-        System.out.println(missingNum);
+        System.out.println("missing:"+missingNum);
 
     }
 

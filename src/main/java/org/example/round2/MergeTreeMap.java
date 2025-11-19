@@ -18,11 +18,23 @@ public class MergeTreeMap {
         treeMap1.put(3,25);
         treeMap1.put(4,40);
 
-        TreeMap<Integer,Integer> mergedMap = mergeMaps(treeMap, treeMap1);
+        TreeMap<Integer,Integer> mergedMap = mergeMaps1(treeMap, treeMap1);
         System.out.println("mergedMap:"+mergedMap);
 
 
+    }
 
+    private static TreeMap<Integer, Integer> mergeMaps1(TreeMap<Integer, Integer> treeMap, TreeMap<Integer, Integer> treeMap1) {
+        TreeMap<Integer, Integer> mergedMap = new TreeMap<>(treeMap1);
+        for (Map.Entry<Integer, Integer> entry : treeMap.entrySet()) {
+            Integer key = entry.getKey();
+            Integer value = entry.getValue();
+            Integer oldValue =  mergedMap.getOrDefault(key, 0);
+
+            mergedMap.put(key, oldValue + value);
+
+        }
+        return   mergedMap;
     }
 
     private static TreeMap<Integer, Integer> mergeMaps(TreeMap<Integer, Integer> treeMap, TreeMap<Integer, Integer> treeMap1) {
