@@ -100,6 +100,12 @@ public class Employee {
         var groupByDepartmentAndByRole = employees.stream().collect(Collectors.groupingBy(Employee::getDept, Collectors.groupingBy(Employee::getRole)));
         System.out.println("groupByDepartmentAndByRole:"+groupByDepartmentAndByRole);
 
+        //groupingBy(key, maxBy(comparator)) → Map<K, Optional<T>>
+        var groupByDepartmentMaxSalEmp = employees.stream().collect(Collectors.groupingBy(Employee::getDept, Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
+        System.out.println("groupByDepartmentMaxSalEmp:"+groupByDepartmentMaxSalEmp);
 
+        groupByDepartmentMaxSalEmp.forEach((dept,sal)->{
+            System.out.println("dept:"+dept+" sal:"+sal.get().getSalary());
+        });
     }
 }
