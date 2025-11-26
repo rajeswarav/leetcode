@@ -33,6 +33,11 @@ class Producer extends Thread {
                 IO.println("Exception :"+e.getMessage());
             }
         }
+        try {
+            queue.put("end");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 
@@ -48,6 +53,13 @@ class Consumer extends Thread {
                 IO.println("Consumer take "+queue.take());
             } catch (InterruptedException e) {
                 IO.println("Exception :"+e.getMessage());
+            }
+            try {
+                if(queue.take().equals("end")){
+                    break;
+                }
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
         }
     }
