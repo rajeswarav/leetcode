@@ -18,7 +18,7 @@ public class WordsAnagram {
     private static boolean isAnagrams(String a, String b) {
         char[] c1 = a.toCharArray();
         char[] c2 = b.toCharArray();
-        Set<Character> set = new HashSet<Character>();
+        Set<Character> set = new HashSet<>();
         for (int i = 0; i < c1.length; i++) {
             set.add(c1[i]);
         }

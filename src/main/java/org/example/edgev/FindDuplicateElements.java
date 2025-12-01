@@ -8,12 +8,12 @@ public class FindDuplicateElements {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 2, 7, 8, 8, 3};
         System.out.println(Arrays.toString(array));
-        Set<Integer> set = new HashSet<Integer>();
-        Set<Integer> dup = new HashSet<Integer>();
-        for(int i=0;i<array.length;i++){
-            if(!set.add(array[i])) {
-                dup.add(array[i]);
-            }
+        Set<Integer> set = new HashSet<>();
+        Set<Integer> dup = new HashSet<>();
+          for(int ele:array){
+              if(!set.add(ele)) {
+                  dup.add(ele);
+              }
         }
 
         System.out.println(dup);

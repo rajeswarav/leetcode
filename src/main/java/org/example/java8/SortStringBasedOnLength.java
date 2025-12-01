@@ -7,8 +7,10 @@ import java.util.List;
 public class SortStringBasedOnLength {
 
     public static void main(String[] args) {
-        List<String> list = List.of("a", "bb", "ccc", "dddd", "eeeee", "ffffff");
+        List<String> list = List.of("dddd", "eeeee", "a", "bb", "ccc",  "ffffff");
+        System.out.println("Original List: " + list);
         var result = list.stream().sorted(Comparator.comparingInt(String::length)).toList();
-        System.out.println("Result:"+result+" type:"+result.getClass());
+        //list.stream().sorted(Comparator.comparingInt(String::length)).forEach(System.out::println);
+       System.out.println("Result:"+result+" type:"+result.getClass());
     }
 }

@@ -29,10 +29,11 @@ public class Java8Practice {
                 flat.add(s);
             }
         }
-        System.out.println(flat);
+        System.out.println("traditional:"+flat);
 
         //using stream api
-        List<String> flat1 =list.stream().flatMap(s->s.stream()).collect(Collectors.toList());
+        //List<String> flat1 =list.stream().flatMap(s->s.stream()).collect(Collectors.toList());
+        List<String> flat1 = list.stream().flatMap(l -> l.stream()).toList();
         System.out.println("Flatting map: "+flat1);
 
     }

@@ -8,17 +8,22 @@ public class StringCompression {
         String str = "aaabbccccd";
 
         Map<Character, Integer> map = new LinkedHashMap<>();
+
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            map.put(ch, map.getOrDefault(ch, 0) + 1);
+            map.put(str.charAt(i), map.getOrDefault(str.charAt(i), 0) + 1);
         }
-        StringBuilder sb = new StringBuilder();
-       // map.forEach((c,v)->{sb.append(c);sb.append(v);});
+        System.out.println(map);
+        StringBuilder  sb = new StringBuilder("");
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
             sb.append(entry.getKey());
             sb.append(entry.getValue());
         }
-        System.out.println(sb.toString());
+        str = sb.toString();
+        System.out.println("str:"+str);
     }
+
+
+
+
 
 }
