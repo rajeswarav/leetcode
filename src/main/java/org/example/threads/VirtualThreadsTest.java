@@ -5,7 +5,6 @@ import java.util.concurrent.Executors;
 
 public class VirtualThreadsTest {
     public static void main(String[] args) {
-        //System.out.println("Starting VirtualThreadsTest");
 
         Runnable r = new Runnable() {
             @Override
